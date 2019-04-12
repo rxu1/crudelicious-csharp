@@ -1,0 +1,44 @@
+@model Dishes
+
+<div class="container-fluid">
+  <div class="row col-md-12">
+    <a href="/" id="home-btn"><button class="btn btn-primary">Home</button></a>
+  </div>
+  <div class="row">
+    <form class="col-md-12" asp-action="Edit" method="post">
+      <!-- prepopulate forms with values to have info. show up on edit page -->
+      <div class="form-group">
+        <span asp-validation-for="Name" class="text-danger"></span>
+        <label asp-for="Name"></label>
+        <input type="text" asp-for="Name" placeholder="Enter your dish's name">
+      </div>
+      <div class="form-group">
+        <span asp-validation-for="Chef" class="text-danger"></span>
+        <label asp-for="Chef"></label>
+        <input type="text" asp-for="Chef" placeholder="Enter chef's name">
+      </div>
+      <div class="form-group">
+        <span asp-validation-for="Tastiness" class="text-danger"></span>
+        <label asp-for="Tastiness"></label>
+        <select class="form-control" asp-for="Tastiness">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <span asp-validation-for="Calories" class="text-danger"></span>
+        <label asp-for="Calories"></label>
+        <input type="text" asp-for="Calories" placeholder="Enter calories of food">
+      </div>
+      <div class="form-group">
+        <span asp-validation-for="Description" class="text-danger"></span>
+        <label asp-for="Description"></label>
+        <textarea class="form-control" asp-for="Description" cols="30" rows="10"></textarea>
+      </div>
+      <button class="btn btn-primary">Add a dish</button>
+    </form>
+  </div>
+</div>

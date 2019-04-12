@@ -1,0 +1,28 @@
+@model Dishes
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <a href="/" id="home-btn"><button class="btn btn-primary">Home</button></a>
+    </div>
+  </div>
+  <div class="row">
+    @{
+      <div class="col-md-12" id="details">
+        <h1>@Model.Name</h1>
+        <h4>@Model.Chef</h4>
+      </div>
+      <div class="col-md-12">
+        <p>@Model.Description</p>
+        <p><span class="details1">Calories:</span> @Model.Calories</p>
+        <p><span class="details1">Tastiness:</span> @Model.Tastiness</p>
+      </div>
+    }
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <a href="/delete/@Model.DishId" class="btn btn-danger">Delete</a>
+      <a href="/edit/@Model.DishId" class="btn btn-primary">Edit</a>
+    </div>
+  </div>
+</div>
